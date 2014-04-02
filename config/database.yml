@@ -17,9 +17,9 @@
 development:
   adapter: postgresql
   encoding: unicode
-  database: myapp_development
+  database: vlast_development
   pool: 5
-  username: myapp
+  username: skip
   password:
 
   # Connect on a TCP socket. Omitted by default since the client uses a
@@ -32,7 +32,7 @@ development:
   #port: 5432
 
   # Schema search path. The server defaults to $user,public
-  #schema_search_path: myapp,sharedapp,public
+  #schema_search_path: vlast,sharedapp,public
 
   # Minimum log levels, in increasing order:
   #   debug5, debug4, debug3, debug2, debug1,
@@ -46,7 +46,7 @@ development:
 test:
   adapter: postgresql
   encoding: unicode
-  database: myapp_test
+  database: vlast_test
   pool: 5
   username: myapp
   password:
@@ -54,7 +54,7 @@ test:
 production:
   adapter: postgresql
   encoding: unicode
-  database: myapp_production
+  database: vlast_production
   pool: 5
   username: myapp
   password:

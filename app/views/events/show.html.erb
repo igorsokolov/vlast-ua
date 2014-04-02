@@ -1,6 +1,11 @@
 <p id="notice"><%= notice %></p>
 
 <p>
+  <strong>Date:</strong>
+  <%= @event.event_date_year%>
+</p>
+
+<p>
   <strong>Title:</strong>
   <%= @event.title %>
 </p>
@@ -12,17 +17,17 @@
 
 <p>
   <strong>Source:</strong>
-  <%= @event.source %>
+  <%= @event.source.name %>
 </p>
 
 <p>
   <strong>Destination:</strong>
-  <%= @event.destination %>
+  <%= @event.destination.name %>
 </p>
 
 <p>
   <strong>Object:</strong>
-  <%= @event.object %>
+  <%= @event.object.name %>
 </p>
 
 <%= link_to 'Edit', edit_event_path(@event) %> |

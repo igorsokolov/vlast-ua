@@ -1,4 +1,4 @@
-Myapp::Application.routes.draw do
+Vlast::Application.routes.draw do
   resources :events
 
   resources :entities

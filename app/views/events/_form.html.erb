@@ -12,6 +12,11 @@
   <% end %>
 
   <div class="field">
+    <%= f.label :event_date %><br>
+    <%= f.text_field :event_date  %>
+  </div>
+
+  <div class="field">
     <%= f.label :title %><br>
     <%= f.text_area :title %>
   </div>
@@ -21,15 +26,15 @@
   </div>
   <div class="field">
     <%= f.label :source_id %><br>
-    <%= f.text_field :source_id %>
+    <%= f.select :source_id, Entity.all.collect{|e| [e.name, e.id]} %>
   </div>
   <div class="field">
     <%= f.label :destination_id %><br>
-    <%= f.text_field :destination_id %>
+    <%= f.select :destination_id, Entity.all.collect{|e| [e.name, e.id]} %>
   </div>
   <div class="field">
     <%= f.label :object_id %><br>
-    <%= f.text_field :object_id %>
+    <%= f.select :object_id, Entity.all.collect{|e| [e.name, e.id]} %>
   </div>
   <div class="actions">
     <%= f.submit %>
