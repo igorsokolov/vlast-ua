@@ -14,8 +14,6 @@ class EventsController < ApplicationController
 
   # GET /events/new
   def new
-    year = params[:event].delete :event_date
-    params[:event][:event_date] = Date.parse("01/01/#{year}")
     @event = Event.new
   end
 
@@ -26,6 +24,8 @@ class EventsController < ApplicationController
   # POST /events
   # POST /events.json
   def create
+    year = event_params[:event].delete :event_date
+    event_params[:event][:event_date] = Date.parse("01/01/#{year}")
     @event = Event.new(event_params)
 
     respond_to do |format|
@@ -42,8 +42,8 @@ class EventsController < ApplicationController
   # PATCH/PUT /events/1
   # PATCH/PUT /events/1.json
   def update
-    year = params[:event].delete :event_date
-    params[:event][:event_date] = Date.parse("01/01/#{year}")
+    year = event_params[:event].delete :event_date
+    event_params[:event][:event_date] = Date.parse("01/01/#{year}")
 
     respond_to do |format|
       if @event.update(event_params)
