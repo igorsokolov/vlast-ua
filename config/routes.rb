@@ -1,4 +1,6 @@
 Myapp::Application.routes.draw do
+  resources :events
+
   resources :entities
 
   root 'entities#index'
